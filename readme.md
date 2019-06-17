@@ -1,5 +1,9 @@
 # ISBN validator 
 
+## Usage
+
+`php src/examples/isbn.php {isbn_number}`
+
 ## Introduction
 The ISBN-10 verification process is used to validate book identification numbers. These normally contain dashes and look like: 3-598-21508-8
 
