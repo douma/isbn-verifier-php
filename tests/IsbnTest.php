@@ -24,4 +24,10 @@ final class IsbnTest extends TestCase
         $isbn = new \Isbn\Isbn();
         $this->assertFalse($isbn->isValid('3-598-21508-7'));
     }
+
+    public function test_number_with_x()
+    {
+        $isbn = new \Isbn\Isbn();
+        $this->assertTrue($isbn->isValid('3-598-21507-X'));
+    }
 }
