@@ -7,18 +7,14 @@ final class IsbnTest extends TestCase
 {
     public function test_number_is_valid(): void
     {
-        $isbn = new Isbn();
-        $this->assertTrue($isbn->isValid('978-3-16-148410-0'));
+        $isbn = new \Isbn\Isbn();
+        $this->assertTrue($isbn->isValid('0131177052'));
+        $this->assertTrue($isbn->isValid('0134052501'));
     }
-}
 
-class Isbn
-{
-    public function isValid(string $number)
+    public function test_number_is_invalid(): void
     {
-        if($number == '978-3-16-148410-0')
-        {
-            return true;
-        }
+        $isbn = new \Isbn\Isbn();
+        $this->assertFalse($isbn->isValid('01311770'));
     }
 }
