@@ -10,6 +10,7 @@ final class IsbnTest extends TestCase
         $isbn = new \Isbn\Isbn();
         $this->assertTrue($isbn->isValid('0131177052'));
         $this->assertTrue($isbn->isValid('0134052501'));
+        $this->assertTrue($isbn->isValid('3-598-21508-8'));
     }
 
     public function test_number_is_invalid(): void
