@@ -4,16 +4,21 @@ namespace Isbn;
 
 class Command
 {
+    private $isbn;
+
+    public function __construct(Isbn $isbn)
+    {
+        $this->isbn = $isbn;
+    }
+
     public function run()
     {
-        $isbn = new Isbn();
-
-        if(!isset($_SERVER['argv'][0])) {
+        if(!isset($_SERVER['argv'][1])) {
             echo "Please supply a number" . PHP_EOL;
             exit;
         }
 
-        if($isbn->isValid($_SERVER['argv'][0])) {
+        if($this->isbn->isValid($_SERVER['argv'][1])) {
             echo "Valid" . PHP_EOL;
         } else {
             echo "Invalid" . PHP_EOL;
