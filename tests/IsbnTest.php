@@ -18,4 +18,10 @@ final class IsbnTest extends TestCase
         $isbn = new \Isbn\Isbn();
         $this->assertFalse($isbn->isValid('01311770'));
     }
+
+    public function test_number_invalid_for_length_10(): void
+    {
+        $isbn = new \Isbn\Isbn();
+        $this->assertFalse($isbn->isValid('3-598-21508-7'));
+    }
 }

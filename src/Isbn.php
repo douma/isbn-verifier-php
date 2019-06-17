@@ -10,13 +10,18 @@ class Isbn
         $length = strlen($stripped);
 
         if($length == 10) {
-            if($number == '0131177052') {
-                return true;
-            } elseif($number == '0134052501') {
-                return true;
-            } elseif($number == '3-598-21508-8') {
-                return true;
-            }
+            return (
+                $stripped[0] * 10  +
+                $stripped[1] * 9  +
+                $stripped[2] * 8  +
+                $stripped[3] * 7  +
+                $stripped[4] * 6  +
+                $stripped[5] * 5  +
+                $stripped[6] * 4  +
+                $stripped[7] * 3  +
+                $stripped[8] * 2  +
+                $stripped[9] * 1
+            ) % 11 === 0;
         }
         return false;
     }
